@@ -35,6 +35,16 @@ class BookingService {
         status: "Booked",
       });
 
+      // get user data {email}
+      // send the following data to the notification service to create a notification ticket
+
+      // const emailData = {
+      //   subject: `FLIGHT ${flightData.flightNumber} BOOKED SUCCESSFULLY`,
+      //   content: `This email is to inform you that your ticket for ${booking.noOfSeats}, departing at ${flightData.departureTime} has been booked sucessfully.`,
+      //   recepientEmail: userData.email,
+      //   notification: `${getCurrentTimeString}`
+      // }
+
       return finalBooking;
     } catch (error) {
       if (error.name == "RepositoryError" || error.name == "ValidationError") {
