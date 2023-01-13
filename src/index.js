@@ -10,7 +10,10 @@ const initializeServer = async () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use("/api", apiRoutes);
+  app.get("/booking/api/v1/ping", (req, res) => {
+    return res.json({ message: "Response from Booking service" });
+  });
+  app.use("/booking/api", apiRoutes);
 
   app.listen(PORT, () => {
     console.log("Server listening on port:", PORT);
